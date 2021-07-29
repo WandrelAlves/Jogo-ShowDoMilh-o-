@@ -75,14 +75,17 @@ int main() {
 	
 	return 0;
 }
-
-void construirQuestoes() {
-	if(inicio == 1) {
-		for(int i = 1; i <= 30; i++) {
+void construirQuestoes() 
+{
+	if(inicio == 1) 
+	{
+		for(int i = 1; i <= 30; i++) 
+		{
 				
-			if (vida == 0) {
-				system ("cls");
-				PlaySound(TEXT("triste.wav"), NULL, SND_ASYNC);
+			if (vida == 0) 
+			{
+			   system ("cls");
+			      PlaySound(TEXT("triste.wav"), NULL, SND_ASYNC);
 				
 				cout<< " ######      ###    ##     ## ########     #######  ##     ## ######## ########  "<< endl;
 				cout<< "##    ##    ## ##   ###   ### ##          ##     ## ##     ## ##       ##     ## "<< endl;
@@ -99,20 +102,21 @@ void construirQuestoes() {
 				
 				break;
 			} else {
-				switch(i) {
+				switch(i) 
+				{
 					case 1:
 						montarQuestao1(i);
 						break;
 		  			case 2:
 						montarQuestao2(i);
 						break;
-			    	case 3:
+			    		case 3:
 						montarQuestao3(i);
 						break;
-			    	case 4:
+			    		case 4:
 						montarQuestao4(i);
 						break;
-			    	case 5:
+			    		case 5:
 						montarQuestao5(i);
 						break;
 					case 6:
@@ -136,13 +140,13 @@ void construirQuestoes() {
 		  			case 12:
 						montarQuestao12(i);
 						break;
-			    	case 13:
+			    		case 13:
 						montarQuestao13(i);
 						break;
-			    	case 14:
+			    		case 14:
 						montarQuestao14(i);
 						break;
-			    	case 15:
+			    		case 15:
 						montarQuestao15(i);
 						break;
 					case 16:
@@ -166,13 +170,13 @@ void construirQuestoes() {
 		  			case 22:
 						montarQuestao22(i);
 						break;
-			    	case 23:
+			    		case 23:
 						montarQuestao23(i);
 						break;
-			    	case 24:
+			    		case 24:
 						montarQuestao24(i);
 						break;
-			    	case 25:
+			    		case 25:
 						montarQuestao25(i);
 						break;
 					case 26:
@@ -193,12 +197,14 @@ void construirQuestoes() {
 				}
 			}
 		} 
-	} else {
+	} 
+	else {
 		cout << "Obrigado por jogar" << endl;
 	}
 }
 
-void montarQuestao1(int questao) {
+void montarQuestao1(int questao) 
+{
 	transicaoFacil();
 	
 	system("cls");
@@ -222,7 +228,8 @@ void montarQuestao1(int questao) {
 	nivel++;
 }
 
-void montarQuestao2(int questao) {
+void montarQuestao2(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -244,7 +251,8 @@ void montarQuestao2(int questao) {
 	nivel++;
 }
 
-void montarQuestao3(int questao) {
+void montarQuestao3(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -266,7 +274,8 @@ void montarQuestao3(int questao) {
 	nivel++;
 }
 
-void montarQuestao4(int questao) {
+void montarQuestao4(int questao) 
+{
 	system("cls");
 		
 	status();
@@ -288,7 +297,8 @@ void montarQuestao4(int questao) {
 	nivel++;
 }
 
-void montarQuestao5(int questao) {
+void montarQuestao5(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -310,7 +320,8 @@ void montarQuestao5(int questao) {
 	nivel++;
 }
 
-void montarQuestao6(int questao) {
+void montarQuestao6(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -332,7 +343,8 @@ void montarQuestao6(int questao) {
 	nivel++;
 }
 
-void montarQuestao7(int questao) {
+void montarQuestao7(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -354,7 +366,8 @@ void montarQuestao7(int questao) {
 	nivel++;
 }
 
-void montarQuestao8(int questao) {
+void montarQuestao8(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -376,7 +389,8 @@ void montarQuestao8(int questao) {
 	nivel++;
 }
 
-void montarQuestao9(int questao) {
+void montarQuestao9(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -398,7 +412,8 @@ void montarQuestao9(int questao) {
 	nivel++;
 }
 
-void montarQuestao10(int questao) {
+void montarQuestao10(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -420,7 +435,8 @@ void montarQuestao10(int questao) {
 	nivel++;
 }
 
-void montarQuestao11(int questao) {
+void montarQuestao11(int questao) 
+{
 	transicaoMedio();
 	
 	system("cls");
@@ -445,7 +461,8 @@ void montarQuestao11(int questao) {
 	nivel++;
 }
 
-void montarQuestao12(int questao) {
+void montarQuestao12(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -467,7 +484,8 @@ void montarQuestao12(int questao) {
 	nivel++;
 }
 
-void montarQuestao13(int questao) {
+void montarQuestao13(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -489,7 +507,8 @@ void montarQuestao13(int questao) {
 	nivel++;
 }
 
-void montarQuestao14(int questao) {
+void montarQuestao14(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -511,7 +530,8 @@ void montarQuestao14(int questao) {
 	nivel++;
 }
 
-void montarQuestao15(int questao) {
+void montarQuestao15(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -533,7 +553,8 @@ void montarQuestao15(int questao) {
 	nivel++;
 }
 
-void montarQuestao16(int questao) {
+void montarQuestao16(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -555,7 +576,8 @@ void montarQuestao16(int questao) {
 	nivel++;
 }
 
-void montarQuestao17(int questao) {
+void montarQuestao17(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -577,7 +599,8 @@ void montarQuestao17(int questao) {
 	nivel++;
 }
 
-void montarQuestao18(int questao) {
+void montarQuestao18(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -599,7 +622,8 @@ void montarQuestao18(int questao) {
 	nivel++;
 }
 
-void montarQuestao19(int questao) {
+void montarQuestao19(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -621,7 +645,8 @@ void montarQuestao19(int questao) {
 	nivel++;
 }
 
-void montarQuestao20(int questao) {
+void montarQuestao20(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -643,7 +668,8 @@ void montarQuestao20(int questao) {
 	nivel++;
 }
 
-void montarQuestao21(int questao) {
+void montarQuestao21(int questao) 
+{
 	transicaoDificil();
 	
 	system("cls");
@@ -668,7 +694,8 @@ void montarQuestao21(int questao) {
 	nivel++;
 }
 
-void montarQuestao22(int questao) {
+void montarQuestao22(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -690,7 +717,8 @@ void montarQuestao22(int questao) {
 	nivel++;
 }
 
-void montarQuestao23(int questao) {
+void montarQuestao23(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -712,7 +740,8 @@ void montarQuestao23(int questao) {
 	nivel++;
 }
 
-void montarQuestao24(int questao) {
+void montarQuestao24(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -734,7 +763,8 @@ void montarQuestao24(int questao) {
 	nivel++;
 }
 
-void montarQuestao25(int questao) {
+void montarQuestao25(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -756,7 +786,8 @@ void montarQuestao25(int questao) {
 	nivel++;
 }
 
-void montarQuestao26(int questao) {
+void montarQuestao26(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -778,7 +809,8 @@ void montarQuestao26(int questao) {
 	nivel++;
 }
 
-void montarQuestao27(int questao) {
+void montarQuestao27(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -800,7 +832,8 @@ void montarQuestao27(int questao) {
 	nivel++;
 }
 
-void montarQuestao28(int questao) {
+void montarQuestao28(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -822,7 +855,8 @@ void montarQuestao28(int questao) {
 	nivel++;
 }
 
-void montarQuestao29(int questao) {
+void montarQuestao29(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -844,7 +878,8 @@ void montarQuestao29(int questao) {
 	nivel++;
 }
 
-void montarQuestao30(int questao) {
+void montarQuestao30(int questao) 
+{
 	system("cls");
 	
 	status();
@@ -863,23 +898,28 @@ void montarQuestao30(int questao) {
 	
 	validarResposta(respostaCorreta, valorPergunta);
 	
-	if (vida > 0) {
+	if (vida > 0) 
+	{
 		fimDeJogo();
 	}
 				
 	nivel++;
 }
 
-void pedirAjuda(int i) {
-	if(ajuda > 0) {
+void pedirAjuda(int i) 
+{
+	if(ajuda > 0) 
+	{
 		int resposta;
 		
 		cout << "\nVocê ainda possui " << ajuda << " ajuda(s)." << endl;
 		cout << "Quer pedir ajuda? 1 - Sim | 2 - Não" << endl;
 		cin >> resposta;
 			
-		if (resposta == 1) {
-			switch(i) {	
+		if (resposta == 1) 
+		{
+			switch(i) 
+			{	
 				case 1:
 					cout << "As reposta c e d estão erradas!" << endl;
 					ajuda--;
@@ -1032,18 +1072,22 @@ void pedirAjuda(int i) {
 					break;			
 		    }
 	   }
-	} else {
+	} 
+	else 
+	{
 		cout << "\nVocê não possui mais ajudas!";
 	}
 }
 
-void validarResposta(char respostaCorreta, double valorPergunta) {
+void validarResposta(char respostaCorreta, double valorPergunta) 
+{
 	char resposta;
 	
 	cout << "\nInforme sua resposta: " << endl;
 	cin >> resposta;
 						
-	if(resposta != respostaCorreta) {
+	if(resposta != respostaCorreta) 
+	{
 		PlaySound(TEXT("errou.wav"), NULL, SND_SYNC);
 		
 		cout << "\nRespota incorreta!" << endl;
@@ -1054,7 +1098,9 @@ void validarResposta(char respostaCorreta, double valorPergunta) {
 		premioPerdido += valorPergunta;
 		
 		system("pause");
-	} else {
+	} 
+	else 
+	{
 		PlaySound(TEXT("certaResposta.wav"), NULL, SND_SYNC);
 		
 		cout << "\nResposta correta!" << endl;
@@ -1065,10 +1111,12 @@ void validarResposta(char respostaCorreta, double valorPergunta) {
 	}			
 }
 
-void fimDeJogo() {
+void fimDeJogo() 
+{
 	cout << "PARABÉNS! VOCÊ CHEGOU ATÉ O FINAL!" << endl;
 	
-	if (premioFinal == premioTotal) {
+	if (premioFinal == premioTotal) 
+	{
 		PlaySound(TEXT("1milhao.wav"), NULL, SND_SYNC);
 	}
 	
@@ -1076,7 +1124,8 @@ void fimDeJogo() {
 	cout << "Prêmio perido: R$" << premioPerdido << endl;
 }
 
-void transicaoFacil() {
+void transicaoFacil() 
+{
 	system("cls");
 	PlaySound(TEXT("nivel.wav"), NULL, SND_ASYNC);
 	
@@ -1096,7 +1145,8 @@ void transicaoFacil() {
 	system("cls");
 }
 
-void transicaoMedio() {
+void transicaoMedio() 
+{
 	system("cls");
 	
 	PlaySound(TEXT("nivel.wav"), NULL, SND_SYNC);
@@ -1121,7 +1171,8 @@ void transicaoMedio() {
 	system("cls");
 }
 
-void transicaoDificil() {
+void transicaoDificil() 
+{
 	system("cls");
 	
 	PlaySound(TEXT("nivel.wav"), NULL, SND_SYNC);
@@ -1147,7 +1198,8 @@ void transicaoDificil() {
 	system("cls");
 }
 
-void status() {
+void status() 
+{
 	cout << "Vidas: " << vida << endl;
 	cout << "Prêmio obtido até o momento: R$" << premioFinal << endl;
 	cout << "Prêmio perido até o momento: R$" << premioPerdido << endl;
