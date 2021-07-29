@@ -1,0 +1,1154 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
+#include <windows.h>
+#include <mmsystem.h>
+
+using namespace std;
+
+void construirQuestoes();
+void montarQuestao1(int questao);
+void montarQuestao2(int questao);
+void montarQuestao3(int questao);
+void montarQuestao4(int questao);
+void montarQuestao5(int questao);
+void montarQuestao6(int questao);
+void montarQuestao7(int questao);
+void montarQuestao8(int questao);
+void montarQuestao9(int questao);
+void montarQuestao10(int questao);
+void montarQuestao11(int questao);
+void montarQuestao12(int questao);
+void montarQuestao13(int questao);
+void montarQuestao14(int questao);
+void montarQuestao15(int questao);
+void montarQuestao16(int questao);
+void montarQuestao17(int questao);
+void montarQuestao18(int questao);
+void montarQuestao19(int questao);
+void montarQuestao20(int questao);
+void montarQuestao21(int questao);
+void montarQuestao22(int questao);
+void montarQuestao23(int questao);
+void montarQuestao24(int questao);
+void montarQuestao25(int questao);
+void montarQuestao26(int questao);
+void montarQuestao27(int questao);
+void montarQuestao28(int questao);
+void montarQuestao29(int questao);
+void montarQuestao30(int questao);
+void pedirAjuda(int i);
+void validarResposta(char respostaCorreta, double valorPergunta);
+void transicaoFacil();
+void transicaoMedio();
+void transicaoDificil();
+void fimDeJogo();
+void status();
+
+int nivel, vida = 3, ajuda = 2, inicio;
+float premioTotal = 1000000.0, premioFinal = 0.0, premioPerdido= 0.0;
+
+int main() {
+	setlocale(LC_ALL, "Portuguese");
+	
+	cout << "########  ######## ##     ##    ##     ## #### ##    ## ########   #######   " << endl;
+	cout << "##     ## ##       ###   ###    ##     ##  ##  ###   ## ##     ## ##     ## "  << endl;
+	cout << "##     ## ##       #### ####    ##     ##  ##  ####  ## ##     ## ##     ## "	<< endl;
+	cout << "########  ######   ## ### ##    ##     ##  ##  ## ## ## ##     ## ##     ## "	<< endl;
+	cout << "##     ## ##       ##     ##     ##   ##   ##  ##  #### ##     ## ##     ## "	<< endl;
+	cout << "##     ## ##       ##     ##      ## ##    ##  ##   ### ##     ## ##     ## "	<< endl;
+	cout << "########  ######## ##     ##       ###    #### ##    ## ########   #######  "	<< endl;
+	
+	cout << "\n\nBEM VINDO AO JOGO DO MILHÃO!!" << endl;
+	
+	cout << "\nO jogo é simples e consiste em responder todas as perguntas que aparecerem." << endl; 
+	
+	cout << "\nRegras:" << endl;
+	cout << "1- Você possui 3 (três) vidas. A cada resposta errada, você perde 1 (uma) vida!" << endl;
+	cout << "2- Você tem direito a 2 (dois) pedidos de ajuda!"<< endl;
+	
+	cout << "\nDeseja começar o jogo? 1-Sim | 2-Não"<< endl;
+	cin  >> (inicio);
+	
+	construirQuestoes();
+	
+	return 0;
+}
+
+void construirQuestoes() {
+	if(inicio == 1) {
+		for(int i = 1; i <= 30; i++) {
+				
+			if (vida == 0) {
+				system ("cls");
+				PlaySound(TEXT("triste.wav"), NULL, SND_ASYNC);
+				
+				cout<< " ######      ###    ##     ## ########     #######  ##     ## ######## ########  "<< endl;
+				cout<< "##    ##    ## ##   ###   ### ##          ##     ## ##     ## ##       ##     ## "<< endl;
+				cout<< "##         ##   ##  #### #### ##          ##     ## ##     ## ##       ##     ## "<< endl;
+				cout<< "##   #### ##     ## ## ### ## ######      ##     ## ##     ## ######   ########  "<< endl;
+				cout<< "##    ##  ######### ##     ## ##          ##     ##  ##   ##  ##       ##   ##   "<< endl;
+				cout<< "##    ##  ##     ## ##     ## ##          ##     ##   ## ##   ##       ##    ##  "<< endl;
+				cout<< " ######   ##     ## ##     ## ########     #######     ###    ######## ##     ## "<< endl;
+				
+				cout << "\n\nSuas vidas acabaram! Tente novamente!\n" << endl;
+				
+				cout << "Prêmio final: R$" << premioFinal << endl;
+				cout << "Prêmio perdido: R$" << premioPerdido << endl;
+				
+				break;
+			} else {
+				switch(i) {
+					case 1:
+						montarQuestao1(i);
+						break;
+		  			case 2:
+						montarQuestao2(i);
+						break;
+			    	case 3:
+						montarQuestao3(i);
+						break;
+			    	case 4:
+						montarQuestao4(i);
+						break;
+			    	case 5:
+						montarQuestao5(i);
+						break;
+					case 6:
+						montarQuestao6(i);
+						break;
+					case 7:
+						montarQuestao7(i);
+						break;
+					case 8:
+						montarQuestao8(i);
+						break;
+					case 9:
+						montarQuestao9(i);
+						break;
+					case 10:
+						montarQuestao10(i);
+						break;
+					case 11:
+						montarQuestao11(i);
+						break;
+		  			case 12:
+						montarQuestao12(i);
+						break;
+			    	case 13:
+						montarQuestao13(i);
+						break;
+			    	case 14:
+						montarQuestao14(i);
+						break;
+			    	case 15:
+						montarQuestao15(i);
+						break;
+					case 16:
+						montarQuestao16(i);
+						break;
+					case 17:
+						montarQuestao17(i);
+						break;
+					case 18:
+						montarQuestao18(i);
+						break;
+					case 19:
+						montarQuestao19(i);
+						break;
+					case 20:
+						montarQuestao20(i);
+						break;
+					case 21:
+						montarQuestao21(i);
+						break;
+		  			case 22:
+						montarQuestao22(i);
+						break;
+			    	case 23:
+						montarQuestao23(i);
+						break;
+			    	case 24:
+						montarQuestao24(i);
+						break;
+			    	case 25:
+						montarQuestao25(i);
+						break;
+					case 26:
+						montarQuestao26(i);
+						break;
+					case 27:
+						montarQuestao27(i);
+						break;
+					case 28:
+						montarQuestao28(i);
+						break;
+					case 29:
+						montarQuestao29(i);
+						break;
+					case 30:
+						montarQuestao30(i);
+						break;
+				}
+			}
+		} 
+	} else {
+		cout << "Obrigado por jogar" << endl;
+	}
+}
+
+void montarQuestao1(int questao) {
+	transicaoFacil();
+	
+	system("cls");
+		
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual é o jogo mais jogado do mundo?"<< endl;
+	cout << "a)Fortnite"<< endl;
+	cout << "b)Minecraft "<< endl;
+	cout << "c)Freefire"<< endl;
+	cout << "d)Call of duty warzone"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'a';
+	double valorPergunta = 1.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+						
+	nivel++;
+}
+
+void montarQuestao2(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual foi o primeiro jogo eletronico criado?" << endl;
+	cout << "a)Tetris" << endl;
+	cout << "b)Asteroides" << endl;
+	cout << "c)ping pong" << endl;
+	cout << "d)snake" << endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'c';
+	double valorPergunta = 2.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao3(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "No meios do jogos o que significa LOL?"<< endl;
+	cout << "a)LAUGHING UNTIL HANGING ON THE FLOOR "<< endl;
+	cout << "b)League of legends"<< endl;
+	cout << "c)Lmao on the Floor"<< endl;
+	cout << "d)Lose or Lost"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 3.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao4(int questao) {
+	system("cls");
+		
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "O jogo mais vendido do mundo?"<< endl;
+	cout << "a)Call of duty"<< endl;
+	cout << "b) Final fantasy 4"<< endl;
+	cout << "c) Mario"<< endl;
+	cout << "d) Minecraft"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'd';
+	double valorPergunta = 4.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao5(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "O jogo mobile mais jogado?"<< endl;
+	cout << "a) Subway surfs"<< endl;
+	cout << "b) Freefire"<< endl;
+	cout << "c) 8 ball pool"<< endl;
+	cout << "d) Pou"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 5.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao6(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual é a loja digital de games mais famosa?"<< endl;
+	cout << "a) steam"<< endl;
+	cout << "b) Origin"<< endl;
+	cout << "c) Epic games"<< endl;
+	cout << "d) GOG"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'a';
+	double valorPergunta = 6.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao7(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Plataforma de jogos mais utilizada?"<< endl;
+	cout << "a) Console"<< endl;
+	cout << "b) PC"<< endl;
+	cout << "c) Mobile"<< endl;
+	cout << "d) Google Stadia"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'a';
+	double valorPergunta = 7.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao8(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual foi o console mais vendido?"<< endl;
+	cout << "a) Atari"<< endl;
+	cout << "b) Xbox 360"<< endl;
+	cout << "c) Playstation 2"<< endl;
+	cout << "d) Switch pro"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'c';
+	double valorPergunta = 8.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao9(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual dessas empresas não corresponde a uma empresa de jogos?"<< endl;
+	cout << "a) Riot"<< endl;
+	cout << "b) Lanmar"<< endl;
+	cout << "c) MTI Studio"<< endl;
+	cout << "d) Ubisoft"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 9.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao10(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Em qual dos jogos a seguir, o heroi precisava resgatar uma princesa de vestido rosa?"<< endl;
+	cout << "a) Shrek"<< endl;
+	cout << "b) Mario"<< endl;
+	cout << "c) Sonic"<< endl;
+	cout << "d) Resident Evil"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 10.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+					
+	nivel++;
+}
+
+void montarQuestao11(int questao) {
+	transicaoMedio();
+	
+	system("cls");
+	
+	status();
+	
+	cout << "Nivel Intermediário" << endl;
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual é o software é o mais utilizado?"<< endl;
+	cout << "a) Linux"<< endl;
+	cout << "b) Zoho CRM"<< endl;
+	cout << "c) Windows"<< endl;
+	cout << "d) Agendor "<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'a';
+	double valorPergunta = 10.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+					
+	nivel++;
+}
+
+void montarQuestao12(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Oque significa o www na internet?"<< endl;
+	cout << "a) World wide web "<< endl;
+	cout << "b) web world wide"<< endl;
+	cout << "c) web wide world"<< endl;
+	cout << "d) what world web"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'a';
+	double valorPergunta = 15.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+	
+	nivel++;
+}
+
+void montarQuestao13(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual foi o primeiro tweet da historia?"<< endl;
+	cout << "a) Olá twitter "<< endl;
+	cout << "b) Olá, mundo"<< endl;
+	cout << "c) Estou pensando ainda"<< endl;
+	cout << "d) Estou preparando meu twitter"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'd';
+	double valorPergunta = 20.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao14(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual foi a priemrira rede social da historia da internet?"<< endl;
+	cout << "a) Myspace "<< endl;
+	cout << "b) Google"<< endl;
+	cout << "c) Classmate"<< endl;
+	cout << "d) Orkut"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'c';
+	double valorPergunta = 25.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao15(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Quantos bits cabem em um byte?"<< endl;
+	cout << "a) 5 bits "<< endl;
+	cout << "b) 10 bits"<< endl;
+	cout << "c) 1 bit"<< endl;
+	cout << "d) 8 bits"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'd';
+	double valorPergunta = 35.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao16(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual linguagem não utlizamos no desenvolvimento web?"<< endl;
+	cout << "a) C++ "<< endl;
+	cout << "b) Python"<< endl;
+	cout << "c) Java"<< endl;
+	cout << "d) C#"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'd';
+	double valorPergunta = 40.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao17(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual é a linguagem de programação mais dificil de se aprender?"<< endl;
+	cout << "a) Kotlin "<< endl;
+	cout << "b) Malbolge"<< endl;
+	cout << "c) Assembly"<< endl;
+	cout << "d) VB.NET"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 45.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao18(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual é alinguagem que mais paga ?"<< endl;
+	cout << "a) Python "<< endl;
+	cout << "b) Perl"<< endl;
+	cout << "c) Rust"<< endl;
+	cout << "d) Scala"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 50.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao19(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Quem criou a primeira linguagem de programação?"<< endl;
+	cout << "a) James Gosling "<< endl;
+	cout << "b) Ada Lovelacel"<< endl;
+	cout << "c) Brendan Eich"<< endl;
+	cout << "d) Larry Wall"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 55.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao20(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Em que ano foi criado o primeiro computador?"<< endl;
+	cout << "a) 1930 "<< endl;
+	cout << "b) 1989"<< endl;
+	cout << "c) 1946"<< endl;
+	cout << "d) 1950"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'c';
+	double valorPergunta = 60.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao21(int questao) {
+	transicaoDificil();
+	
+	system("cls");
+	
+	status();
+	
+	cout << "Nivel Dificil" << endl;
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual destas séries não é sobre um serial killer?"<< endl;
+	cout << "a) Dexter "<< endl;
+	cout << "b) Chuck"<< endl;
+	cout << "c) Hannibal"<< endl;
+	cout << "d) MindHunter"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 65.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao22(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Quem fica com Ted, no ultimo episódio de How I met your mother?"<< endl;
+	cout << "a) Robin "<< endl;
+	cout << "b) Tracy"<< endl;
+	cout << "c) Lily"<< endl;
+	cout << "d) Victoria"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'a';
+	double valorPergunta = 70.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao23(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Quem planeou o assalto em La Casa de Papel?"<< endl;
+	cout << "a) Nairobi "<< endl;
+	cout << "b) Berlin"<< endl;
+	cout << "c) Rio"<< endl;
+	cout << "d) Professor"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'd';
+	double valorPergunta = 75.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao24(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual o nome da atriz que interpreta Alex Vause em Orange is the New Black?"<< endl;
+	cout << "a) Clare Anton "<< endl;
+	cout << "b) Laura Prepon"<< endl;
+	cout << "c) Alison Grey"<< endl;
+	cout << "d) Natasha Simpson"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 80.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);		
+				
+	nivel++;
+}
+
+void montarQuestao25(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Como se chama a cadeia de fast food que serve de fachada para o negócio de Heisenberg, em Breaking Bad?"<< endl;
+	cout << "a) Taco Bell"<< endl;
+	cout << "b) Los Pollos Hermanos"<< endl;
+	cout << "c) Mc Donalds"<< endl;
+	cout << "d) Five guys"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'b';
+	double valorPergunta = 85.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao26(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Na série Friends, qual destas NÃO é a irmã de Joey?"<< endl;
+	cout << "a) Mary- Belle "<< endl;
+	cout << "b) Dina"<< endl;
+	cout << "c) Veronica"<< endl;
+	cout << "d) Mary-Therese"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'a';
+	double valorPergunta = 90.000;	
+	
+	validarResposta(respostaCorreta, valorPergunta);	
+				
+	nivel++;
+}
+
+void montarQuestao27(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Quem matou Bethany Young em Pretty Little Liars?"<< endl;
+	cout << "a) Mary Drake "<< endl;
+	cout << "b) Ezra Fitz"<< endl;
+	cout << "c) Melissa Hastings"<< endl;
+	cout << "d) Alison DiLaurentis"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'c';
+	double valorPergunta = 23.750;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao28(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Qual destes apelidos não pertence à Modern Family?"<< endl;
+	cout << "a) Dunphy"<< endl;
+	cout << "b) Pritchett"<< endl;
+	cout << "c) Sullivan"<< endl;
+	cout << "d) Tucker"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'c';
+	double valorPergunta = 23.750;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao29(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "O monstro que aterroriza as pessoas na série Stranger Things é um..."<< endl;
+	cout << "a) Behemoth"<< endl;
+	cout << "b) Devorador de mentes"<< endl;
+	cout << "c) Zoro"<< endl;
+	cout << "d) Demogorgon"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'd';
+	double valorPergunta = 23.750;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+				
+	nivel++;
+}
+
+void montarQuestao30(int questao) {
+	system("cls");
+	
+	status();
+	
+	cout << "\n" << questao << "ª questão!" << endl;
+	cout << "Em que cidade foram filmadas as cenas de King's Landing, na série Game of Thrones?"<< endl;
+	cout << "a) Sevilha"<< endl;
+	cout << "b) Medina"<< endl;
+	cout << "c) Dubrovnik"<< endl;
+	cout << "d) Essaouira"<< endl;
+	
+	pedirAjuda(questao);
+	
+	char respostaCorreta = 'c';
+	double valorPergunta = 23.750;	
+	
+	validarResposta(respostaCorreta, valorPergunta);
+	
+	if (vida > 0) {
+		fimDeJogo();
+	}
+				
+	nivel++;
+}
+
+void pedirAjuda(int i) {
+	if(ajuda > 0) {
+		int resposta;
+		
+		cout << "\nVocê ainda possui " << ajuda << " ajuda(s)." << endl;
+		cout << "Quer pedir ajuda? 1 - Sim | 2 - Não" << endl;
+		cin >> resposta;
+			
+		if (resposta == 1) {
+			switch(i) {	
+				case 1:
+					cout << "As reposta c e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");
+		 			break;
+				case 2:
+					cout << "As reposta a e b estão erradas!" << endl;
+					ajuda--;
+					system("pause");
+			 		break;
+				case 3:
+					cout << "As reposta d e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");		
+					break;
+				case 4:
+					cout << "As reposta b e a estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 5:
+					cout << "As reposta a e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 6:
+					cout << "As reposta b e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 7:
+					cout << "As reposta c e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 8:
+					cout << "As reposta d e b estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 9:
+					cout << "As reposta d e a estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 10:
+					cout << "As reposta c e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 11:
+					cout << "As reposta d e b estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 12:
+					cout << "As reposta b e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 13:
+					cout << "As reposta a e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 14:
+					cout << "As reposta b e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 15:
+					cout << "As reposta c e b estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 16:
+					cout << "As reposta b e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");		
+					break;
+				case 17:
+					cout << "As reposta a e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");		
+					break;
+				case 18:
+					cout << "As reposta c e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 19:
+					cout << "As reposta a e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 20:
+					cout << "As reposta b e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 21:
+					cout << "As reposta a e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 22:
+					cout << "As reposta b e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 23:
+					cout << "As reposta a e c estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 24:
+					cout << "As reposta a e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 25:
+					cout << "As reposta c e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 26:
+					cout << "As reposta b e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");			
+					break;
+				case 27:
+					cout << "As reposta a e b estão erradas!" << endl;
+					ajuda--;
+					system("pause")	;		
+					break;
+				case 28:
+					cout << "As reposta a e d estão erradas!" << endl;
+					ajuda--;
+					system("pause");
+					break;
+				case 29:
+					cout << "As reposta c e b estão erradas!" << endl;
+					ajuda--;
+					system("pause");
+					break;
+				case 30:
+					cout << "As reposta a e b estão erradas!" << endl;
+					ajuda--;
+					system("pause");
+					break;			
+		    }
+	   }
+	} else {
+		cout << "\nVocê não possui mais ajudas!";
+	}
+}
+
+void validarResposta(char respostaCorreta, double valorPergunta) {
+	char resposta;
+	
+	cout << "\nInforme sua resposta: " << endl;
+	cin >> resposta;
+						
+	if(resposta != respostaCorreta) {
+		PlaySound(TEXT("errou.wav"), NULL, SND_SYNC);
+		
+		cout << "\nRespota incorreta!" << endl;
+		cout << "A reposta correta era '" << respostaCorreta << "'!\n" << endl;
+							
+		vida--;
+							
+		premioPerdido += valorPergunta;
+		
+		system("pause");
+	} else {
+		PlaySound(TEXT("certaResposta.wav"), NULL, SND_SYNC);
+		
+		cout << "\nResposta correta!" << endl;
+		
+		premioFinal += valorPergunta;
+		
+		system("pause");
+	}			
+}
+
+void fimDeJogo() {
+	cout << "PARABÉNS! VOCÊ CHEGOU ATÉ O FINAL!" << endl;
+	
+	if (premioFinal == premioTotal) {
+		PlaySound(TEXT("1milhao.wav"), NULL, SND_SYNC);
+	}
+	
+	cout << "Prêmio obtido: R$" << premioFinal << endl;
+	cout << "Prêmio perido: R$" << premioPerdido << endl;
+}
+
+void transicaoFacil() {
+	system("cls");
+	PlaySound(TEXT("nivel.wav"), NULL, SND_ASYNC);
+	
+	cout << "##    ## #### ##     ## ######## ##          ########    ###     ######  #### ## "<< endl;
+	cout << "###   ##  ##  ##     ## ##       ##          ##         ## ##   ##    ##  ##  ## "<< endl;
+	cout << "####  ##  ##  ##     ## ##       ##          ##        ##   ##  ##        ##  ## "<< endl;
+	cout << "## ## ##  ##  ##     ## ######   ##          ######   ##     ## ##        ##  ## "<< endl;
+	cout << "##  ####  ##   ##   ##  ##       ##          ##       ######### ##        ##  ## "<< endl;
+	cout << "##   ###  ##    ## ##   ##       ##          ##       ##     ## ##    ##  ##  ## "<< endl;
+	cout << "##    ## ####    ###    ######## ########    ##       ##     ##  ######  #### ########"<< endl;
+	
+	cout << "\n\nVAMOS PARA O JOGO!\n" << endl;
+	cout << "Você está no nível FÁCIL e irá responder questões sobre JOGOS!" << endl;
+	cout << "Responda até a pergunta 10 para avançar para o próximo nível!\n\n" << endl;
+	
+	system("pause");
+	system("cls");
+}
+
+void transicaoMedio() {
+	system("cls");
+	
+	PlaySound(TEXT("nivel.wav"), NULL, SND_SYNC);
+	
+	cout << "##    ## #### ##     ## ######## ##          ##     ## ######## ########  ####  #######  " << endl;
+	cout << "###   ##  ##  ##     ## ##       ##          ###   ### ##       ##     ##  ##  ##     ## "	<< endl;
+	cout << "####  ##  ##  ##     ## ##       ##          #### #### ##       ##     ##  ##  ##     ## "	<< endl;
+	cout << "## ## ##  ##  ##     ## ######   ##          ## ### ## ######   ##     ##  ##  ##     ## "	<< endl;	
+	cout << "##  ####  ##   ##   ##  ##       ##          ##     ## ##       ##     ##  ##  ##     ## "	<< endl;
+	cout << "##   ###  ##    ## ##   ##       ##          ##     ## ##       ##     ##  ##  ##     ## "	<< endl;
+	cout << "##    ## ####    ###    ######## ########    ##     ## ######## ########  ####  #######  "	<< endl;
+	
+	cout << "\n\nVOCÊ PASSOU DE NÍVEL!\n" << endl;
+	cout << "Agora você está no nível MÉDIO e irá responder questões sobre TECNOLOGIA!" << endl;
+	cout << "Responda até a pergunta 20 para avançar para o próximo nível\n\n!" << endl;
+	
+	cout << "Vidas Restantes: " << vida << endl;
+	cout << "Prêmio obtido até o momento: R$" << premioFinal << endl;
+	cout << "Prêmio perido até o momento: R$" << premioPerdido << endl;
+	
+	system("pause");
+	system("cls");
+}
+
+void transicaoDificil() {
+	system("cls");
+	
+	PlaySound(TEXT("nivel.wav"), NULL, SND_SYNC);
+	
+	cout << "##    ## #### ##     ## ######## ##          ########  #### ######## ####  ######  #### ##" << endl;
+	cout << "###   ##  ##  ##     ## ##       ##          ##     ##  ##  ##        ##  ##    ##  ##  ##" << endl;
+	cout << "####  ##  ##  ##     ## ##       ##          ##     ##  ##  ##        ##  ##        ##  ##" << endl;
+	cout << "## ## ##  ##  ##     ## ######   ##          ##     ##  ##  ######    ##  ##        ##  ##" << endl;
+	cout << "##  ####  ##   ##   ##  ##       ##          ##     ##  ##  ##        ##  ##        ##  ##" << endl;
+	cout << "##   ###  ##    ## ##   ##       ##          ##     ##  ##  ##        ##  ##    ##  ##  ##" << endl;
+	cout << "##    ## ####    ###    ######## ########    ########  #### ##       ####  ######  #### ########" << endl;
+	
+	
+	cout << "\n\nVOCÊ PASSOU DE NÍVEL!\n" << endl;
+	cout << "Agora você está no nível DIFÍCIL e irá responder questões sobre SÉRIES!" << endl;
+	cout << "Responda as últimas 10 perguntas e consiga um prêmio ainda maior!\n\n" << endl;
+	
+	cout << "Vidas Restantes: " << vida << endl;
+	cout << "Prêmio obtido até o momento: R$" << premioFinal << endl;
+	cout << "Prêmio perido até o momento: R$" << premioPerdido << endl;
+	
+	system("pause");
+	system("cls");
+}
+
+void status() {
+	cout << "Vidas: " << vida << endl;
+	cout << "Prêmio obtido até o momento: R$" << premioFinal << endl;
+	cout << "Prêmio perido até o momento: R$" << premioPerdido << endl;
+}
